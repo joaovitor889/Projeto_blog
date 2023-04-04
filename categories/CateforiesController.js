@@ -23,4 +23,12 @@ router.post("/categories/save", (req, res) =>{
     }
 });
 
-module.exports =router;
+router.get("/admin/categories", (req,res) =>   {
+
+    Category.findAll().then(categories   =>{
+        res.render("admin/categories/index", {categories:  categories});
+    });
+
+});
+
+module.exports = router;
