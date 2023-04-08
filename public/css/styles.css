@@ -1,0 +1,11 @@
+.presentation{
+    height: 20rem;
+    width: 100%;
+    background-image: url("../img/photo-1517433456452-f9633a875f6f.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
