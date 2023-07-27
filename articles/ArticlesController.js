@@ -104,7 +104,7 @@ router.get("/articles/page/:num",(req, res) => {
 
     Article.findAndCountAll({
         limit: 4,
-        offset: 1
+        offset: offset
     }).then(articles=> {
 
         var next;
@@ -118,7 +118,11 @@ router.get("/articles/page/:num",(req, res) => {
             next: next,
             articles : articles
         }
-        res.json(result);
+
+        Category.findAll().then(categories => {
+            res.render("admin/articles/page", {result: result, categories: categories})
+        });
+        // res.json(result);
     });
 });
 module.exports = router;
